@@ -242,6 +242,22 @@ footer{background:#070707;padding:60px 56px 32px;}
 @media(max-width:768px){nav{padding:12px 20px;}.nav-links,#nav-cta-desk{display:none;}.hamburger{display:flex;}.nav-logo img{height:36px;}.hero{padding:100px 20px 56px;}.hero-h1{font-size:clamp(2.2rem,9vw,3rem);}.hero-sub{font-size:16px;}.hero-actions{flex-direction:column;align-items:center;gap:10px;width:100%;max-width:320px;}.btn-hero-prim,.btn-hero-sec{width:100%;text-align:center;padding:14px 20px;}.hero-stats{flex-wrap:wrap;gap:20px 36px;justify-content:center;margin-top:48px;padding-top:32px;}.hero-stat-num{font-size:2rem;}section,.calc-section,.cta-section{padding:56px 20px;}.section-h2{font-size:clamp(1.8rem,7vw,2.4rem);}.problems-grid,.services-grid,.results-grid{grid-template-columns:1fr;}.service-card{padding:28px 22px;}.calc-wrapper{grid-template-columns:1fr;gap:20px;}.calc-inputs{padding:22px 18px;}.result-hero-num{font-size:3.5rem;}.calc-cta-strip{flex-direction:column;text-align:center;}.diferencial-layout{grid-template-columns:1fr;gap:28px;}.diferencial-visual{padding:28px 22px;}.result-card{padding:36px 24px;}.blog-top{flex-direction:column;align-items:flex-start;gap:16px;}.blog-grid{grid-template-columns:1fr;}.cta-h2{font-size:clamp(1.8rem,7vw,2.6rem);}.footer-top{grid-template-columns:1fr;gap:28px;}.footer-bottom{flex-direction:column;gap:14px;text-align:center;}.modal{padding:28px 20px;}}
 @media(max-width:400px){.result-cards-grid{grid-template-columns:1fr;}.hero-h1{font-size:1.9rem;}}
 ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:#111;}::-webkit-scrollbar-thumb{background:#2a2a2a;border-radius:3px;}
+
+#dc-clientes::-webkit-slider-thumb,#dc-ticket::-webkit-slider-thumb,
+#dc-email::-webkit-slider-thumb,#dc-whatsapp::-webkit-slider-thumb,
+#dc-cumple::-webkit-slider-thumb{
+  -webkit-appearance:none;width:20px;height:20px;background:var(--brand);
+  border-radius:50%;cursor:pointer;border:3px solid white;
+  box-shadow:0 0 0 2px var(--brand);transition:transform .15s;
+}
+#dc-clientes::-webkit-slider-thumb:hover,#dc-ticket::-webkit-slider-thumb:hover,
+#dc-email::-webkit-slider-thumb:hover,#dc-whatsapp::-webkit-slider-thumb:hover,
+#dc-cumple::-webkit-slider-thumb:hover{transform:scale(1.2);}
+@media(max-width:768px){
+  #calculadora-datos .section-inner>div:last-child{grid-template-columns:1fr!important;}
+  #calculadora-datos .section-inner>div:nth-child(2){grid-template-columns:1fr!important;}
+}
+
 </style>
 </head>
 <body>
@@ -274,7 +290,7 @@ footer{background:#070707;padding:60px 56px 32px;}
   <div class="nav-links">
     <button class="nav-link" onclick="goTo('servicios')">Servicios</button>
     <button class="nav-link" onclick="goTo('metodo-orbital')" style="color:var(--brand);font-weight:700;">M&#233;todo Orbital</button>
-    <button class="nav-link" onclick="goTo('calculadora')">Calculadora</button>
+    <button class="nav-link" onclick="goTo('calculadora-datos')">Valor de Datos</button><button class="nav-link" onclick="goTo('calculadora')">Calculadora</button>
     <button class="nav-link" onclick="goTo('diferencial')">Diferencial</button>
     <button class="nav-link" onclick="goTo('blog')">Blog</button>
     <button class="nav-link" onclick="openModal()">Contacto</button>
@@ -519,6 +535,184 @@ footer{background:#070707;padding:60px 56px 32px;}
 </section>
 
 
+<!-- ══ CALCULADORA DE VALOR DE DATOS ══ -->
+<section id="calculadora-datos" style="background:#F7F6F4;padding:96px 56px;">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Calculadora</div>
+      <h2 class="section-h2">¿Cuánto vale <em>completar</em><br>el perfil de tus clientes?</h2>
+      <p class="section-sub">Cada dato adicional que capturás activa un canal nuevo. Calculá el revenue incremental de tener una base más completa.</p>
+    </div>
+
+    <!-- BENCHMARKS -->
+    <div class="reveal d1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;margin-bottom:48px;">
+      <div style="background:white;border:1px solid #EBEBEB;border-radius:14px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="width:44px;height:44px;background:#F0FAF5;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;">👁</div>
+        <div>
+          <div style="font-size:22px;font-weight:900;color:#C14A1C;letter-spacing:-.03em;">+60% <span style="font-size:14px;font-weight:600;color:#5A5A5A;">de apertura</span></div>
+          <div style="font-size:13px;color:#5A5A5A;line-height:1.55;margin-top:4px;">Los mensajes enviados al segmento adecuado tienen una probabilidad mucho mayor de ser vistos.</div>
+        </div>
+      </div>
+      <div style="background:white;border:1px solid #EBEBEB;border-radius:14px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="width:44px;height:44px;background:#F0FAF5;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;">🖱</div>
+        <div>
+          <div style="font-size:22px;font-weight:900;color:#C14A1C;letter-spacing:-.03em;">+20% <span style="font-size:14px;font-weight:600;color:#5A5A5A;">de clics</span></div>
+          <div style="font-size:13px;color:#5A5A5A;line-height:1.55;margin-top:4px;">Cuando el mensaje se siente útil y oportuno, el cliente responde. La clave está en el match entre oferta y segmento.</div>
+        </div>
+      </div>
+      <div style="background:white;border:1px solid #EBEBEB;border-radius:14px;padding:24px 28px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="width:44px;height:44px;background:#F0FAF5;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;">🛍</div>
+        <div>
+          <div style="font-size:22px;font-weight:900;color:#C14A1C;letter-spacing:-.03em;">+5% <span style="font-size:14px;font-weight:600;color:#5A5A5A;">de conversión</span></div>
+          <div style="font-size:13px;color:#5A5A5A;line-height:1.55;margin-top:4px;">Las campañas con segmentación precisa y mensajes relevantes muestran un rendimiento superior.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CALC GRID -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;" class="reveal d2">
+
+      <!-- INPUTS -->
+      <div style="background:white;border:1px solid #EBEBEB;border-radius:18px;padding:32px;">
+        <div style="font-size:14px;font-weight:700;color:#0F0F0F;margin-bottom:24px;display:flex;align-items:center;gap:9px;">⚙ Parámetros de tu base</div>
+
+        <!-- Clientes totales -->
+        <div style="margin-bottom:22px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#888;margin-bottom:9px;">Clientes en tu base</div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <input type="range" id="dc-clientes" min="500" max="100000" step="500" value="10000" oninput="dcUpdate()" style="flex:1;-webkit-appearance:none;appearance:none;height:5px;background:#EBEBEB;border-radius:3px;outline:none;cursor:pointer;">
+            <div id="dv-clientes" style="font-size:19px;font-weight:800;color:#E8521A;min-width:86px;text-align:right;">10.000</div>
+          </div>
+        </div>
+
+        <!-- Ticket promedio -->
+        <div style="margin-bottom:22px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#888;margin-bottom:9px;">Ticket promedio (ARS)</div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <input type="range" id="dc-ticket" min="5000" max="200000" step="5000" value="35000" oninput="dcUpdate()" style="flex:1;-webkit-appearance:none;appearance:none;height:5px;background:#EBEBEB;border-radius:3px;outline:none;cursor:pointer;">
+            <div id="dv-ticket" style="font-size:19px;font-weight:800;color:#E8521A;min-width:86px;text-align:right;">$35K</div>
+          </div>
+        </div>
+
+        <!-- % con email -->
+        <div style="margin-bottom:22px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#888;margin-bottom:6px;display:flex;align-items:center;gap:8px;">
+            📧 Clientes con email
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <input type="range" id="dc-email" min="0" max="100" step="1" value="60" oninput="dcUpdate()" style="flex:1;-webkit-appearance:none;appearance:none;height:5px;background:#EBEBEB;border-radius:3px;outline:none;cursor:pointer;">
+            <div id="dv-email" style="font-size:19px;font-weight:800;color:#E8521A;min-width:86px;text-align:right;">60%</div>
+          </div>
+          <div style="background:rgba(193,74,28,.07);border:1px solid rgba(193,74,28,.18);border-radius:9px;padding:9px 13px;font-size:11px;color:#888;margin-top:8px;line-height:1.5;">
+            📊 Benchmark: <strong style="color:#E8521A;">55%–75%</strong> de bases activas tienen email capturado
+          </div>
+        </div>
+
+        <!-- % con WhatsApp -->
+        <div style="margin-bottom:22px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#888;margin-bottom:6px;">
+            💬 Clientes con WhatsApp
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <input type="range" id="dc-whatsapp" min="0" max="100" step="1" value="30" oninput="dcUpdate()" style="flex:1;-webkit-appearance:none;appearance:none;height:5px;background:#EBEBEB;border-radius:3px;outline:none;cursor:pointer;">
+            <div id="dv-whatsapp" style="font-size:19px;font-weight:800;color:#E8521A;min-width:86px;text-align:right;">30%</div>
+          </div>
+          <div style="background:rgba(193,74,28,.07);border:1px solid rgba(193,74,28,.18);border-radius:9px;padding:9px 13px;font-size:11px;color:#888;margin-top:8px;line-height:1.5;">
+            📲 WhatsApp tiene <strong style="color:#E8521A;">98% de tasa de apertura</strong> vs 20% del email promedio
+          </div>
+        </div>
+
+        <!-- % con fecha de nacimiento -->
+        <div style="margin-bottom:0;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#888;margin-bottom:6px;">
+            🎂 Clientes con fecha de nacimiento
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <input type="range" id="dc-cumple" min="0" max="100" step="1" value="20" oninput="dcUpdate()" style="flex:1;-webkit-appearance:none;appearance:none;height:5px;background:#EBEBEB;border-radius:3px;outline:none;cursor:pointer;">
+            <div id="dv-cumple" style="font-size:19px;font-weight:800;color:#E8521A;min-width:86px;text-align:right;">20%</div>
+          </div>
+          <div style="background:rgba(193,74,28,.07);border:1px solid rgba(193,74,28,.18);border-radius:9px;padding:9px 13px;font-size:11px;color:#888;margin-top:8px;line-height:1.5;">
+            🎁 Campañas de cumpleaños logran <strong style="color:#E8521A;">3× más conversión</strong> que campañas genéricas
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTADOS -->
+      <div style="display:flex;flex-direction:column;gap:16px;">
+
+        <!-- Score de completitud -->
+        <div style="background:linear-gradient(135deg,#FBF0EB,#F5DDD3);border:1px solid rgba(193,74,28,.2);border-radius:18px;padding:28px;text-align:center;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(193,74,28,.7);margin-bottom:10px;">Score de completitud de tu base</div>
+          <div id="dc-score" style="font-size:5rem;font-weight:900;color:#C14A1C;letter-spacing:-.06em;line-height:1;transition:all .4s;">37%</div>
+          <div style="margin-top:12px;background:#fff;border-radius:8px;height:10px;overflow:hidden;">
+            <div id="dc-score-bar" style="height:100%;background:linear-gradient(90deg,#C14A1C,#E8521A);border-radius:8px;transition:width .6s ease;width:37%;"></div>
+          </div>
+          <div id="dc-score-label" style="font-size:13px;color:#5A5A5A;margin-top:10px;">Base con oportunidad de mejora</div>
+        </div>
+
+        <!-- Revenue por canal -->
+        <div style="background:white;border:1px solid #EBEBEB;border-radius:14px;padding:20px 22px;">
+          <div style="font-size:13px;font-weight:700;color:#0F0F0F;margin-bottom:16px;">Revenue potencial por canal (anual)</div>
+
+          <div style="margin-bottom:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+              <span style="font-size:12px;color:#5A5A5A;display:flex;align-items:center;gap:6px;">📧 Email marketing</span>
+              <span id="dc-rev-email" style="font-size:14px;font-weight:800;color:#0F0F0F;">$0</span>
+            </div>
+            <div style="height:5px;background:#EBEBEB;border-radius:3px;overflow:hidden;">
+              <div id="dc-bar-email" style="height:100%;background:#C14A1C;border-radius:3px;transition:width .5s ease;width:0%;"></div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+              <span style="font-size:12px;color:#5A5A5A;display:flex;align-items:center;gap:6px;">💬 WhatsApp marketing</span>
+              <span id="dc-rev-wsp" style="font-size:14px;font-weight:800;color:#0F0F0F;">$0</span>
+            </div>
+            <div style="height:5px;background:#EBEBEB;border-radius:3px;overflow:hidden;">
+              <div id="dc-bar-wsp" style="height:100%;background:#25D366;border-radius:3px;transition:width .5s ease;width:0%;"></div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:4px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+              <span style="font-size:12px;color:#5A5A5A;display:flex;align-items:center;gap:6px;">🎂 Campañas de cumpleaños</span>
+              <span id="dc-rev-cumple" style="font-size:14px;font-weight:800;color:#0F0F0F;">$0</span>
+            </div>
+            <div style="height:5px;background:#EBEBEB;border-radius:3px;overflow:hidden;">
+              <div id="dc-bar-cumple" style="height:100%;background:#E8521A;border-radius:3px;transition:width .5s ease;width:0%;"></div>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid #EBEBEB;margin-top:14px;padding-top:14px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:12px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.06em;">Total estimado</span>
+            <span id="dc-rev-total" style="font-size:22px;font-weight:900;color:#C14A1C;letter-spacing:-.03em;">$0</span>
+          </div>
+        </div>
+
+        <!-- Oportunidad perdida -->
+        <div style="background:white;border:1px solid #EBEBEB;border-radius:14px;padding:20px 22px;">
+          <div style="font-size:13px;font-weight:700;color:#0F0F0F;margin-bottom:14px;">💡 Oportunidad no capturada</div>
+          <div style="font-size:13px;color:#5A5A5A;line-height:1.65;" id="dc-insight-1">Ajustá los parámetros para ver el análisis.</div>
+          <div style="font-size:13px;color:#5A5A5A;line-height:1.65;margin-top:8px;" id="dc-insight-2"></div>
+          <div style="font-size:13px;color:#5A5A5A;line-height:1.65;margin-top:8px;" id="dc-insight-3"></div>
+        </div>
+
+        <!-- CTA -->
+        <div style="background:#C14A1C;border-radius:14px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+          <div>
+            <div style="font-size:15px;font-weight:600;color:white;">¿Querés completar tu base?</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.75);margin-top:3px;">Te mostramos cómo en 30 minutos</div>
+          </div>
+          <button onclick="openModal()" style="background:white;color:#C14A1C;padding:11px 18px;border-radius:8px;font-size:13px;font-weight:700;border:none;cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif;transition:all .15s;flex-shrink:0;" onmouseover="this.style.background='#f5e8e3'" onmouseout="this.style.background='white'">Agendar call →</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="calc-section" id="calculadora">
   <div class="section-inner">
     <div class="reveal"><div class="section-eyebrow">Calculadora</div><h2 class="section-h2">&#191;Cu&#225;ntos clientes est&#225;s<br><em>perdiendo</em> en tienda?</h2><p class="section-sub">Calcul&#225; el impacto real de no recolectar datos en tus puntos de venta f&#237;sicos. Basado en benchmarks de retail latinoamericano.</p></div>
@@ -689,6 +883,80 @@ function calcUpdate(){
   document.getElementById('ins-3').textContent='Ticket '+fM(ticket)+' × '+recomp+'× recompra = LTV '+fM(ltv)+' por contacto. Total no capturado: '+fM(rev)+' anuales.';
 }
 calcUpdate();
+
+function fDC(n){
+  if(n>=1000000000)return'$'+(n/1000000000).toFixed(1).replace('.',',')+'B';
+  if(n>=1000000)return'$'+(n/1000000).toFixed(1).replace('.',',')+'M';
+  if(n>=10000)return'$'+Math.round(n/1000)+'K';
+  return'$'+Math.round(n).toLocaleString('es-AR');
+}
+function dcUpdate(){
+  var clientes = +document.getElementById('dc-clientes').value;
+  var ticket   = +document.getElementById('dc-ticket').value;
+  var pEmail   = +document.getElementById('dc-email').value/100;
+  var pWsp     = +document.getElementById('dc-whatsapp').value/100;
+  var pCumple  = +document.getElementById('dc-cumple').value/100;
+
+  // Display values
+  document.getElementById('dv-clientes').textContent = clientes.toLocaleString('es-AR');
+  document.getElementById('dv-ticket').textContent   = ticket>=1000?'$'+Math.round(ticket/1000)+'K':'$'+ticket.toLocaleString('es-AR');
+  document.getElementById('dv-email').textContent    = Math.round(pEmail*100)+'%';
+  document.getElementById('dv-whatsapp').textContent = Math.round(pWsp*100)+'%';
+  document.getElementById('dv-cumple').textContent   = Math.round(pCumple*100)+'%';
+
+  // Score de completitud (promedio ponderado)
+  var score = Math.round((pEmail*0.4 + pWsp*0.4 + pCumple*0.2) * 100);
+  document.getElementById('dc-score').textContent = score+'%';
+  document.getElementById('dc-score-bar').style.width = score+'%';
+  var scoreLabel = score < 30 ? 'Base con mucho potencial de mejora' :
+                   score < 55 ? 'Base con oportunidad de mejora' :
+                   score < 75 ? 'Base bien desarrollada' : 'Base de alto rendimiento';
+  document.getElementById('dc-score-label').textContent = scoreLabel;
+
+  // Revenue por canal
+  // Email: clientes con email × ticket × frecuencia recompra (1.5x) × tasa conversión email (2%)
+  var revEmail  = clientes * pEmail  * ticket * 1.5 * 0.02 * 1.60; // +60% apertura benchmark
+  // WhatsApp: clientes con wsp × ticket × frecuencia (2x, más frecuente) × tasa conversión wsp (4%, mayor apertura)
+  var revWsp    = clientes * pWsp    * ticket * 2   * 0.04 * 1.20; // +20% clics benchmark
+  // Cumpleaños: clientes con fecha × ticket × 3x conversión × tasa base 3%
+  var revCumple = clientes * pCumple * ticket * 1   * 0.05 * 1.05; // +5% conversión benchmark
+  var revTotal  = revEmail + revWsp + revCumple;
+
+  document.getElementById('dc-rev-email').textContent  = fDC(revEmail);
+  document.getElementById('dc-rev-wsp').textContent    = fDC(revWsp);
+  document.getElementById('dc-rev-cumple').textContent = fDC(revCumple);
+  document.getElementById('dc-rev-total').textContent  = fDC(revTotal);
+
+  // Barras proporcionales
+  var maxRev = Math.max(revEmail, revWsp, revCumple, 1);
+  document.getElementById('dc-bar-email').style.width  = Math.round(revEmail/maxRev*100)+'%';
+  document.getElementById('dc-bar-wsp').style.width    = Math.round(revWsp/maxRev*100)+'%';
+  document.getElementById('dc-bar-cumple').style.width = Math.round(revCumple/maxRev*100)+'%';
+
+  // Oportunidad perdida — brecha hasta 90% en cada canal
+  var targetEmail  = 0.90; var targetWsp = 0.70; var targetCumple = 0.60;
+  var gapEmail  = Math.max(targetEmail  - pEmail,  0);
+  var gapWsp    = Math.max(targetWsp    - pWsp,    0);
+  var gapCumple = Math.max(targetCumple - pCumple, 0);
+
+  var potEmail  = clientes * gapEmail  * ticket * 1.5 * 0.02 * 1.60;
+  var potWsp    = clientes * gapWsp    * ticket * 2   * 0.04 * 1.20;
+  var potCumple = clientes * gapCumple * ticket * 1   * 0.05 * 1.05;
+  var potTotal  = potEmail + potWsp + potCumple;
+
+  document.getElementById('dc-insight-1').textContent =
+    'Tu base tiene un score de '+score+'%. Si llegaras al nivel óptimo (email 90%, WhatsApp 70%, cumpleaños 60%), podrías generar '+fDC(potTotal)+' adicionales por año.';
+  document.getElementById('dc-insight-2').textContent =
+    gapWsp > 0.1 ?
+    'El mayor potencial está en WhatsApp: capturar el número de ' + Math.round(gapWsp*clientes).toLocaleString('es-AR') + ' clientes más te habilitaría el canal de mayor tasa de apertura del mercado (98%).' :
+    'Tu cobertura de WhatsApp es muy buena. El foco ahora debería estar en activar y segmentar bien esos contactos.';
+  document.getElementById('dc-insight-3').textContent =
+    pCumple < 0.40 ?
+    'Las campañas de cumpleaños tienen 3× más conversión. Con '+Math.round(gapCumple*clientes).toLocaleString('es-AR')+' fechas más por capturar, estás dejando '+fDC(potCumple)+' sobre la mesa.' :
+    'Buena cobertura de fechas de nacimiento. Potenciá esa data con ofertas personalizadas anticipadas.';
+}
+dcUpdate();
+
 async function sendForm(e){
   e.preventDefault();
   var btn=document.getElementById('fbtn');btn.textContent='Enviando...';btn.disabled=true;
